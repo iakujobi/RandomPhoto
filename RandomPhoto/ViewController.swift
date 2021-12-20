@@ -8,12 +8,57 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // Image view that brings up a random image everytime the button is tapped
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        // This prevents the picture from filling up too much space
+        imageView.contentMode = .scaleAspectFill
+        // Give imageView a background color
+        imageView.backgroundColor = .white
+        return imageView
+    }()
+    
+    // Create button - UI is User Interface
+    private let button: UIButton = {
+        let button = UIButton()
+        // Give Button a title and background color
+        button.backgroundColor = .white
+        button.setTitle("Random Photo", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Change background color
+        view.backgroundColor = .systemPink
+        // add image to view
+        view.addSubview(imageView)
+        // Give imageSize a length and width
+        imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        // Center imageView
+        imageView.center = view.center
+        
+        // Add a subView button
+        view.addSubview(button)
+        
+        // Call the function getRandomPhoto
+        getRandomPhoto()
     }
-
+    
+    // Function to get random photos
+    func getRandomPhoto() {
+        let urlString = "https://source.unsplash.com/random/600x600"
+        // Convert string to image
+        let url = URL(string: urlString)!
+        // Get the contents of the url via data
+        guard let data = try? Data(contentsOf: url) else {
+            return
+        }
+        // Create image from data
+        imageView.image = UIImage(data: data)
+    }
 
 }
 

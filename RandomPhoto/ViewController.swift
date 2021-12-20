@@ -45,6 +45,14 @@ class ViewController: UIViewController {
         
         // Call the function getRandomPhoto
         getRandomPhoto()
+        
+        // Attach to a button
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+    }
+    
+    // Add functionality to button by adding an action and a target
+    @objc func didTapButton() {
+        getRandomPhoto()
     }
     
     override func viewDidLayoutSubviews() {

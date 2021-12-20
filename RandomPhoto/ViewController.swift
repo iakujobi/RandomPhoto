@@ -51,10 +51,10 @@ class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         // Give button a frame
-        button.frame = CGRect(x: 20,
-                              y: view.frame.size.height-50-view.safeAreaInsets.bottom,
-                              width: view.frame.size.width-40,
-                              height: 50)
+        button.frame = CGRect(x: 30,
+                              y: view.frame.size.height-150-view.safeAreaInsets.bottom,
+                              width: view.frame.size.width-60,
+                              height: 55)
     }
     
     // Function to get random photos

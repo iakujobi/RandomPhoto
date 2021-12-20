@@ -28,6 +28,16 @@ class ViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         return button
     }()
+    
+    // Create an array of color so that when the user clicks on the button, the background image and color changes too
+    let colors: [UIColor] = [
+        .systemPink,
+        .systemBlue,
+        .systemMint,
+        .systemYellow,
+        .systemPurple,
+        .systemOrange
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()

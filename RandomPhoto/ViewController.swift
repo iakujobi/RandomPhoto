@@ -42,14 +42,19 @@ class ViewController: UIViewController {
         
         // Add a subView button
         view.addSubview(button)
-        // Give button a frame
-        button.frame = CGRect(x: 20,
-                              y: 0,
-                              width: view.frame.size.width-40,
-                              height: 50)
         
         // Call the function getRandomPhoto
         getRandomPhoto()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // Give button a frame
+        button.frame = CGRect(x: 20,
+                              y: view.frame.size.height-50-view.safeAreaInsets.bottom,
+                              width: view.frame.size.width-40,
+                              height: 50)
     }
     
     // Function to get random photos

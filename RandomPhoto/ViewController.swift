@@ -63,6 +63,8 @@ class ViewController: UIViewController {
     // Add functionality to button by adding an action and a target
     @objc func didTapButton() {
         getRandomPhoto()
+        // Gives a random element for background color when the button is clicked
+        view.backgroundColor = colors.randomElement()
     }
     
     override func viewDidLayoutSubviews() {
